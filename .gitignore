@@ -1,0 +1,15 @@
+# Node backend
+backend/node_modules/
+backend/dist/
+backend/build/
+
+# SQLite DB
+backend/database.sqlite
+
+# Logs
+*.log
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

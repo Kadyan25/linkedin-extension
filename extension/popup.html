@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { width: 350px; padding: 15px; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    .section { margin-bottom: 20px; padding: 15px; border: 1px solid #e1e5e9; border-radius: 8px; }
+    h3 { margin: 0 0 10px 0; color: #0a66c2; font-size: 14px; }
+    input, textarea { width: 100%; padding: 8px; border: 1px solid #d0d7de; border-radius: 6px; box-sizing: border-box; }
+    button { background: #0a66c2; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; margin-top: 8px; }
+    button:disabled { background: #cbd5e1; cursor: not-allowed; }
+    .status { font-size: 12px; margin-top: 5px; }
+    .progress { background: #f3f4f6; height: 20px; border-radius: 10px; overflow: hidden; margin-top: 5px; }
+    .progress-bar { background: #10b981; height: 100%; transition: width 0.3s; }
+    .counters { display: flex; justify-content: space-between; font-size: 12px; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <div class="section">
+    <h3>1. Current Tab Title</h3>
+    <button id="getTitleBtn">Get Current Tab Title</button>
+    <div id="titleResult" class="status"></div>
+  </div>
+
+  <div class="section">
+    <h3>2. Profile Scraping</h3>
+    <textarea id="profileUrls" placeholder="Paste LinkedIn URLs (comma-separated)" rows="3"></textarea>
+    <button id="scrapeBtn">Start Profile Scraping</button>
+    <div id="scrapeStatus" class="status"></div>
+    <div id="scrapeProgress" class="progress" style="display:none;">
+      <div id="progressBar" class="progress-bar" style="width:0%"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>3. Feed Engagement</h3>
+    <div style="display:flex; gap:10px;">
+      <input id="reactionCount" type="number" min="1" placeholder="Reactions" style="width:48%;">
+      <input id="commentCount" type="number" min="1" placeholder="Comments" style="width:48%;">
+    </div>
+    <button id="engageBtn">Start Feed Engagement</button>
+    <div id="engageStatus" class="status"></div>
+    <div class="counters" id="counters" style="display:none;">
+      <span id="likedCounter">Liked 0/0</span>
+      <span id="commentedCounter">Commented 0/0</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
